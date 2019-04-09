@@ -1,0 +1,39 @@
+<div>
+  {{text}}
+</div>
+<form class="form" id="registrarse-form" [formGroup]="registrarseForm" (ngSubmit)="onSubmit()" novalidate>
+  <div class="form-group">
+    <label class="center-block">Nombres:
+    <input class="form-control" formControlName="name">
+  </label>
+
+
+      <label class="center-block">Apellidos:
+      <input class="form-control" formControlName="apellido">
+    </label>
+   
+        <label class="center-block">N° Cédula:
+        <input class="form-control" formControlName="nocedula">
+      </label>
+
+      <label class="center-block">Dirección:
+        <input class="form-control" formControlName="dir">
+      </label>
+
+      <label class="center-block">Correo Electrónico:
+        <input class="form-control" formControlName="email">
+      </label>
+
+      <label class="center-block">Contraseña:
+        <input class="form-control" formControlName="contra">
+      </label>
+
+      <label class="center-block">Teléfono:
+        <input class="form-control" formControlName="telefono">
+      </label>
+
+  </div>
+  
+  <button type="submit" [disabled]="!contactForm.valid" class="btn btn-success">Registrarse</button>
+
+</form>
