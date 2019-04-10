@@ -7,6 +7,7 @@ import{AppRoutingModule} from './app-routing.module';
 import { ContactComponent } from './contact/contact.component';
 import {FormsModule,ReactiveFormsModule,} from '@angular/forms';
 import { RegistrarseComponent } from './registrarse/registrarse.component';
+import { LoginComponent } from './login/login.component';
 
 
 @NgModule({
@@ -14,7 +15,8 @@ import { RegistrarseComponent } from './registrarse/registrarse.component';
     AppComponent,
     HomeComponent,
     ContactComponent,
-    RegistrarseComponent
+    RegistrarseComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,

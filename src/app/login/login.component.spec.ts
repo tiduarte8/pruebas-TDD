@@ -2,25 +2,25 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import {BrowserModule,By} from '@angular/platform-browser';
 import{FormsModule,ReactiveFormsModule} from '@angular/forms'
 import {DebugElement} from '@angular/core';
-import { ContactComponent } from './contact.component';
+import { LoginComponent } from './login.component';
 
 import { createComponent } from '@angular/compiler/src/core';
 
-describe('ContactComponent', () => {
-  let comp: ContactComponent;
-  let fixture: ComponentFixture<ContactComponent>;
+describe('LoginComponent', () => {
+  let comp: LoginComponent;
+  let fixture: ComponentFixture<LoginComponent>;
   let de:DebugElement;
   let el:HTMLElement;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ContactComponent ],
+      declarations: [ LoginComponent ],
       imports:[
         BrowserModule,
         FormsModule,
         ReactiveFormsModule
       ]
-    }).compileComponents().then(()=>{fixture=TestBed.createComponent(ContactComponent);
+    }).compileComponents().then(()=>{fixture=TestBed.createComponent(LoginComponent);
     comp=fixture.componentInstance;
     de=fixture.debugElement.query(By.css('form'));
     el=de.nativeElement;
@@ -31,7 +31,7 @@ describe('ContactComponent', () => {
  
 
   it(`should have a text 'contact-page'`,async( () => {
-    expect(comp.text).toEqual('contact-page');
+    expect(comp.text).toEqual('login');
   }));
 
   it(`should set submteed to true`,async( () => {
@@ -49,21 +49,22 @@ describe('ContactComponent', () => {
   }));
 
   it(`form should be invalid`,async( () => {
-    comp.contactForm.controls['email'].setValue('');
-    comp.contactForm.controls['name'].setValue('');
-    comp.contactForm.controls['text'].setValue('');
-    expect(comp.contactForm.valid).toBeFalsy();
+    comp.loginForm.controls['email'].setValue('');
+   
+    comp.loginForm.controls['pass'].setValue('');
+    expect(comp.loginForm.valid).toBeFalsy();
   }));
 
   
-  it(`form should be invalid`,async( () => {
-    comp.contactForm.controls['email'].setValue('tiduarte@gmai.com');
-    comp.contactForm.controls['name'].setValue('Tito Duarte');
-    comp.contactForm.controls['text'].setValue('hola');
-    expect(comp.contactForm.valid).toBeTruthy();
+  it(`form should be valid`,async( () => {
+    comp.loginForm.controls['email'].setValue('tiduarte@gmai.com');
+   
+    comp.loginForm.controls['pass'].setValue('tito1993');
+    expect(comp.loginForm.valid).toBeTruthy();
   }));
 
 
 
 });
+
 

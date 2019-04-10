@@ -1,7 +1,11 @@
-<div>
-  {{text}}
-</div>
 <form class="form" id="registrarse-form" [formGroup]="registrarseForm" (ngSubmit)="onSubmit()" novalidate>
+    <div style="text-align:center;font-family: 'Times New Roman', Times, serif;font-size: 20px;background-color: rgba(0, 92, 128, 0.548);color: wheat">
+        {{text}}
+      </div>
+<div>
+    <img class="imglog"  src="./../../assets/nuevap.png">
+  </div>
+
   <div class="form-group">
     <label class="center-block">Nombres:
     <input class="form-control" formControlName="name">
@@ -25,7 +29,7 @@
       </label>
 
       <label class="center-block">Contraseña:
-        <input class="form-control" formControlName="contra">
+        <input type="password" class="form-control" formControlName="contra">
       </label>
 
       <label class="center-block">Teléfono:
@@ -34,6 +38,6 @@
 
   </div>
   
-  <button type="submit" [disabled]="!contactForm.valid" class="btn btn-success">Registrarse</button>
+  <button type="submit" [disabled]="!registrarseForm.valid" class="btn btn-success">Registrarse</button>
 
 </form>

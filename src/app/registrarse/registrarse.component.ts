@@ -33,7 +33,7 @@ export class RegistrarseComponent{
     this.registrarseForm=new FormGroup({
       'name':new FormControl(this.usuario.name,[
         Validators.required,
-        Validators.minLength(4)
+        Validators.minLength(1)
       ]),
       'email':new FormControl(this.usuario.email,[
         Validators.required,

@@ -10,7 +10,7 @@ import {DebugElement} from '@angular/core';
 
 import { createComponent } from '@angular/compiler/src/core';
 
-fdescribe('ContactComponent', () => {
+describe('RegistrarseComponent', () => {
   let comp: RegistrarseComponent;
   let fixture: ComponentFixture<RegistrarseComponent>;
   let de:DebugElement;
@@ -31,19 +31,7 @@ fdescribe('ContactComponent', () => {
     });
   }));
   
-
- 
-
-  it(`should have a text 'contact-page'`,async( () => {
-    expect(comp.text).toEqual('registrarse');
-  }));
-
-  it(`should set submteed to true`,async( () => {
-    comp.onSubmit();
-    expect(comp.submitted).toBeTruthy();
-  }));
-
-  it(`should call d ons=Submit method`,async( () => {
+  it(`should call d onSubmit method`,async( () => {
     fixture.detectChanges();
     spyOn(comp,'onSubmit');
     el=fixture.debugElement.query(By.css('button')).nativeElement;
@@ -51,6 +39,18 @@ fdescribe('ContactComponent', () => {
 
     expect(comp.onSubmit).toHaveBeenCalledTimes(0);
   }));
+ 
+
+  it(`should have a text 'Registrarse'`,async( () => {
+    expect(comp.text).toEqual('Registrarse');
+  }));
+
+  it(`should set submteed to true`,async( () => {
+    comp.onSubmit();
+    expect(comp.submitted).toBeTruthy();
+  }));
+
+
 
   it(`form should be invalid`,async( () => {
     comp.registrarseForm.controls['email'].setValue('');
@@ -60,6 +60,7 @@ fdescribe('ContactComponent', () => {
     comp.registrarseForm.controls['telefono'].setValue('');
     comp.registrarseForm.controls['contra'].setValue('');
     comp.registrarseForm.controls['dir'].setValue('');
+    expect(comp.registrarseForm.valid).toBeFalsy();
   }));
 
   
